@@ -1,0 +1,7 @@
+chromedriver.exe
+secrets.json
+memory.json
+preferences.json
+LICENSE.chromedriver
+command_history.txt
+```
