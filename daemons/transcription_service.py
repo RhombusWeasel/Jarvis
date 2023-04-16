@@ -7,7 +7,7 @@ import whisper
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
 from utils import logger
-log = logger.Logger('transcriber', log_level=logger.Logger.INFO)
+log = logger.Logger('transcriber', log_level=logger.Logger.DEBUG)
 
 audio_folder = "audio_files"
 transcriptions_folder = "audio_transcriptions"
@@ -22,7 +22,8 @@ def transcribe_audio_files():
             file = filename.split('.')[0]
             result = model.transcribe(filepath, fp16=True)
             os.remove(filepath)
-            if len(result['text']) > 20:
+            log.debug(result["text"])
+            if len(result['text']) > 10:
                 txt = result['text']
                 log.debug(txt)
                 # Write the transcription to a file

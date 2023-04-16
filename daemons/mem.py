@@ -77,7 +77,7 @@ def search():
     distances = distances.tolist()
 
     # Retrieve the text for each neighbor
-    neighbor_texts = [text_data[index] for index, distance in zip(neighbors[0], distances[0]) if distance < 0.6]
+    neighbor_texts = [text_data[index] for index, distance in zip(neighbors[0], distances[0])]
 
     return jsonify({
         'neighbors': neighbors,

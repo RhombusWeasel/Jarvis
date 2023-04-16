@@ -123,7 +123,7 @@ def main():
 			
 			# Check if any of the names in the list are mentioned in the text
 			triggered = False
-			names = ['Jarvis', 'Travis', 'Janice', 'Jervis']
+			names = ['Jarvis', 'Travis', 'Janice', 'Jervis', 'Javis']
 			for name in names:
 				if name in txt:
 					triggered = True
@@ -132,6 +132,7 @@ def main():
 			# If one of the names is mentioned, send the text to the API server for processing
 			if triggered:
 				data = requests.post(f'{api_server}/ask35', json={'text': req_str + '\n' + txt, 'prefs': prefs})
+				print(data)
 				response = data.json()['response']
 				
 				# Log the response

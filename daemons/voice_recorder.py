@@ -7,10 +7,10 @@ import time, sys, os
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
 from utils import logger
-log = logger.Logger('recorder', log_level=logger.Logger.DEBUG)
+log = logger.Logger('recorder', log_level=logger.Logger.INFO)
 
 audio_folder = "audio_files"
-THRESHOLD = 15000
+THRESHOLD = 700
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 16000
@@ -23,6 +23,8 @@ counter = 0
 def detect_noise(data, threshold):
     audio_data = np.frombuffer(data, dtype=np.int16)
     peak_value = np.max(np.abs(audio_data))
+    if peak_value > 500:
+        log.debug(f'Peak value: {peak_value}')
     if peak_value > threshold:
         log.debug(f'Peak value: {peak_value}')
         return True
