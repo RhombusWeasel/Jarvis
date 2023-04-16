@@ -1,0 +1,38 @@
+{
+  "user": "Your Name",
+  "location": "Where you are",
+  "music": {
+    "genres": [
+      "Rock",
+      "Metal",
+      "Funk and Soul",
+      "Electro Swing"
+    ],
+    "bands": [
+      "Led Zeppelin",
+      "The Beatles",
+      "The Rolling Stones",
+      "The Who",
+      "Tool",
+      "Rush",
+      "The Traveling Wilburys",
+      "Tommy Emmanuel",
+      "Swingrowers",
+      "The Black Keys"
+    ]
+  },
+  "code": {
+    "style": [
+      "Use snake_case not camelCase",
+      "Use 2 spaces for indentation",
+      "Prefers the functional style over the object-oriented style",
+      "Use single quotes for strings",
+      "User is a fan of ternary operators"
+    ],
+    "python": [
+      "Use f strings where appropriate",
+      "Use single quotes for strings",
+      "Use triple quotes for docstrings"
+    ]
+  }
+}
